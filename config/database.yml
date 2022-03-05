@@ -11,6 +11,7 @@ default: &default
   username: <%= ENV.fetch('POSTGRES_USERNAME') %>
   password: <%= ENV.fetch('DATABASE_PASSWORD') %>
   database: <%= ENV.fetch('DATABASE_NAME') %>
+  port: <%= ENV.fetch('DATABASE_PORT') %>
   pool: 5
   variables:
     statement_timeout: 5000

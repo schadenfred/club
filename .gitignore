@@ -31,3 +31,14 @@
 /config/master.key
 
 /config/credentials/production.key
+
+## roro
+mise/**/*.env
+mise/**/*.key
+*.key
+*.env
+!/lib/roro/stacks/**/*.key
+!/lib/roro/stacks/**/*.env
+!test/**/*.key
+!test/**/*.env
+!/.gitignore

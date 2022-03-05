@@ -1,0 +1,102 @@
+--- &1
+:actions:
+- ''
+:dependencies: {}
+:depends_on:
+- ''
+:env:
+  :base:
+    :docker_compose_version:
+      :name: Docker Compose version
+      :value: 3.9
+    :git_config_user_name:
+      :name: The name you'd like associated with git activities
+      :value: Jane Doe
+    :git_config_user_email:
+      :name: The email address you'd like associated with git activities
+      :value: jane.doe@example.com
+    :rails_version:
+      :value: 7.0
+    :JOB_WORKER_URL:
+      :name: Reids job worker url
+      :value: redis://redis:6379/0
+    :REDIS_URL:
+      :name: Reids url
+      :value: redis://redis:6379/0
+    :app_name:
+      :name: Name for your app
+      :value: unstoppable_app
+    :ruby_version:
+      :value: 3.0
+    :bundler_version:
+      :name: Bundler version
+      :value: 2.2.28
+    :db_vendor:
+      :value: postgresql
+    :db_pkg:
+      :value: postgresql-dev
+    :db_volume:
+      :value: "/var/lib/postgresql/data"
+    :db_image:
+      :value: postgres
+    :db_image_version:
+      :value: 14.1
+    :db_gem:
+      :value: pg
+    :DATABASE_NAME:
+      :name: Database name
+      :value: postgres
+    :DATABASE_PASSWORD:
+      :name: Database password
+      :value: postgres
+    :DATABASE_USERNAME:
+      :name: Database username
+      :value: postgres
+    :DATABASE_HOST:
+      :name: Database host
+      :value: db
+    :POSTGRES_NAME:
+      :name: Database name
+      :value: "${DATABASE_NAME}"
+    :POSTGRES_PASSWORD:
+      :name: Database password
+      :value: "${DATABASE_PASSWORD}"
+    :POSTGRES_USERNAME:
+      :name: Database username
+      :value: "${DATABASE_USERNAME}"
+    :POSTGRES_HOST:
+      :name: Database host
+      :value: "${DATABASE_HOST}"
+  :ci: {}
+  :development: {}
+  :staging: {}
+  :production: {}
+  :force: true
+  :exit_on_failure: true
+:preface: ''
+:questions:
+- :question: ''
+  :help: ''
+  :action: ''
+:success: ''
+:itinerary:
+- unstoppable_developer_styles/okonomi/languages/ruby/frameworks/rails/databases/postgres/versions/v14_1
+- unstoppable_developer_styles/okonomi/languages/ruby/frameworks/rails/schedulers/sidekiq
+- unstoppable_developer_styles/okonomi/languages/ruby/frameworks/rails/versions/v7_0
+- unstoppable_developer_styles/okonomi/languages/ruby/versions/v3_0
+:dependency_hash:
+:manifest:
+- "/usr/local/bundle/gems/roro-0.3.30/lib/roro/stacks/docker.yml"
+- "/usr/local/bundle/gems/roro-0.3.30/lib/roro/stacks/unstoppable_developer_styles/okonomi/git.yml"
+- "/usr/local/bundle/gems/roro-0.3.30/lib/roro/stacks/unstoppable_developer_styles/okonomi/okonomi.yml"
+- "/usr/local/bundle/gems/roro-0.3.30/lib/roro/stacks/unstoppable_developer_styles/okonomi/languages/ruby/ruby.yml"
+- "/usr/local/bundle/gems/roro-0.3.30/lib/roro/stacks/unstoppable_developer_styles/okonomi/languages/ruby/frameworks/rails/_builder.yml"
+- "/usr/local/bundle/gems/roro-0.3.30/lib/roro/stacks/unstoppable_developer_styles/okonomi/languages/ruby/frameworks/rails/databases.yml"
+- "/usr/local/bundle/gems/roro-0.3.30/lib/roro/stacks/unstoppable_developer_styles/okonomi/languages/ruby/frameworks/rails/rails.yml"
+- "/usr/local/bundle/gems/roro-0.3.30/lib/roro/stacks/unstoppable_developer_styles/okonomi/languages/ruby/frameworks/rails/databases/postgres/postgres.yml"
+- "/usr/local/bundle/gems/roro-0.3.30/lib/roro/stacks/unstoppable_developer_styles/okonomi/languages/ruby/frameworks/rails/databases/postgres/versions/v14_1/v14_1.yml"
+- "/usr/local/bundle/gems/roro-0.3.30/lib/roro/stacks/unstoppable_developer_styles/okonomi/languages/ruby/frameworks/rails/schedulers/sidekiq/sidekiq.yml"
+- "/usr/local/bundle/gems/roro-0.3.30/lib/roro/stacks/unstoppable_developer_styles/okonomi/languages/ruby/frameworks/rails/versions/v7_0/v7_0.yml"
+- "/usr/local/bundle/gems/roro-0.3.30/lib/roro/stacks/unstoppable_developer_styles/okonomi/languages/ruby/versions/v3_0/v3_0.yml"
+:stack: "/usr/local/bundle/gems/roro-0.3.30/lib/roro/stacks"
+:structure: *1

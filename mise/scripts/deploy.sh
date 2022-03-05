@@ -2,8 +2,9 @@
 
 docker-compose down
 docker-compose -f docker-compose.prod.yml down
-docker build -t handsomefencer/club:latest .
 docker-compose -f docker-compose.prod.yml build --no-cache
+#docker build -t --no-cache handsomefencer/club:latest .
+#docker-compose -f docker-compose.prod.yml build --no-cache
 docker-compose -f docker-compose.prod.yml up
 #docker-compose -f docker-compose.prod.yml && \
 #  run --rm app bin/rails db:environment:set RAILS_ENV=production && \

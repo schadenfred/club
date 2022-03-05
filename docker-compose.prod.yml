@@ -3,7 +3,7 @@ version: '3'
 services:
 
   app:
-#    image: handsomefencer/club:latest
+    image: handsomefencer/club:latest
     build:
       context: .
       dockerfile: Dockerfile

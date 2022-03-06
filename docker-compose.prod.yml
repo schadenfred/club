@@ -4,26 +4,24 @@ services:
 
   app:
     image: handsomefencer/club:latest
-#    build:
-#      context: .
-#      dockerfile: Dockerfile
+    depends_on:
+      - db
     ports:
       - "3000:3000"
-    depends_on:
-      - database
     env_file:
       - ./mise/env/production.env
 
-  database:
+  db:
     image: postgres:14.1
     volumes:
       - db_data:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
     env_file:
       - ./mise/env/production.env
+    ports:
+      - "5432:5432"
     environment:
       PGDATA: /var/lib/postgresql/data/pgdata
+
 
 volumes:
   db_data:

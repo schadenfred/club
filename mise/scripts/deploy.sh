@@ -1,21 +1,26 @@
 #!/bin/bash
 
-docker-compose down
-docker-compose -f docker-compose.prod.yml down
-docker-compose -f docker-compose.prod.yml build
-docker-compose -f docker-compose.prod.yml build
-docker push handsomefencer/club:latest
-
 minikube stop
 minikube delete
-minikube start
 
+#doctl kubernetes cluster kubeconfig save 410c65eb-8e10-440a-9540-d185e41d6d02
+#docker-compose down
+#docker-compose -f docker-compose.prod.yml down
+
+#docker build -t handsomefencer/club:latest .
+
+#docker push handsomefencer/club:latest
+
+#docker-compose -f docker-compose.prod.yml up --build
+
+rm -rf mise/k8s/*
 kompose convert -f docker-compose.prod.yml -o mise/k8s
 cp -r mise/backup/* mise/k8s/
-kubectl create -f mise/k8s/
+#minikube start
+
+kubectl apply -f mise/k8s/
 kubectl get pods --watch
 
-#docker build -t --no-cache handsomefencer/club:latest .
 #docker-compose -f docker-compose.prod.yml build --no-cache
 #docker-compose -f docker-compose.prod.yml up
 #docker-compose -f docker-compose.prod.yml && \

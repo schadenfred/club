@@ -1,15 +1,12 @@
 apiVersion: v1
 data:
-  DATABASE_HOST: database
-  DATABASE_NAME: handsomefencer_production
+  DATABASE_HOST: db
+  DATABASE_NAME: handsomefencer_club_production
   DATABASE_PASSWORD: password
   DATABASE_PORT: "5432"
-  DATABASE_USER: handsomefencer
-  PGDATA: /var/lib/postgresql/data/pgdata
-  POSTGRES_DB: handsomefencer_production
   POSTGRES_PASSWORD: password
-  POSTGRES_USER: handsomefencer
-  RAILS_ENV: production
+  POSTGRES_USER: database
+  RAILS_ENV: development
   SECRET_KEY_BASE: e3e12f083c22f842c1f22183bede95af2e87b5001216826360363e6b84d1334440aced4d2369c470b622c05364aa14a09e67cc7ce75dda511fc589160de50f43
 kind: ConfigMap
 metadata:

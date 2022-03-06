@@ -2,7 +2,7 @@
 
 docker-compose down
 docker-compose -f docker-compose.prod.yml down
-docker-compose -f docker-compose.prod.yml build --no-cache
+docker-compose -f docker-compose.prod.yml build
 #docker build -t --no-cache handsomefencer/club:latest .
 #docker-compose -f docker-compose.prod.yml build --no-cache
 docker-compose -f docker-compose.prod.yml up

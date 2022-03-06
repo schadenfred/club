@@ -6,13 +6,13 @@ metadata:
     kompose.version: 1.22.0 (955b78124)
   creationTimestamp: null
   labels:
-    io.kompose.service: db
-  name: db
+    io.kompose.service: database
+  name: database
 spec:
   replicas: 1
   selector:
     matchLabels:
-      io.kompose.service: db
+      io.kompose.service: database
   strategy:
     type: Recreate
   template:
@@ -22,7 +22,7 @@ spec:
         kompose.version: 1.22.0 (955b78124)
       creationTimestamp: null
       labels:
-        io.kompose.service: db
+        io.kompose.service: database
     spec:
       containers:
         - env:
@@ -82,7 +82,9 @@ spec:
                   key: SECRET_KEY_BASE
                   name: mise-env-production-env
           image: postgres:14.1
-          name: db
+          name: database
+          ports:
+            - containerPort: 5432
           resources: {}
           volumeMounts:
             - mountPath: /var/lib/postgresql/data

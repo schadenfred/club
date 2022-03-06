@@ -1,17 +1,10 @@
-#database: <%#= ENV['DATABASE_NAME'] %>
-#username: <%#= ENV['DATABASE_USER'] %>
-#password: <%#= ENV['DATABASE_PASSWORD'] %>
-#port: <%#= ENV['DATABASE_PORT'] || '5432' %>
-#host: <%#= ENV['DATABASE_HOST'] %>
-
 default: &default
   adapter: postgresql
   encoding: unicode
-  host:     <%= ENV['DATABASE_HOST'] %>
-  username: <%= ENV['POSTGRES_USERNAME'] %>
-  password: <%= ENV['DATABASE_PASSWORD'] %>
-  database: <%= ENV['DATABASE_NAME'] %>
-  port: <%= ENV['DATABASE_PORT'] %>
+  host:     <%= ENV.fetch('DATABASE_HOST') %>
+  username: <%= ENV.fetch('POSTGRES_USER') %>
+  password: <%= ENV.fetch('DATABASE_PASSWORD') %>
+  database: <%= ENV.fetch('DATABASE_NAME') %>
   pool: 5
   variables:
     statement_timeout: 5000

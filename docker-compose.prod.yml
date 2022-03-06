@@ -7,7 +7,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-
     ports:
       - "3000:3000"
     depends_on:
@@ -19,6 +18,8 @@ services:
     image: postgres:14.1
     volumes:
       - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
     env_file:
       - ./mise/env/production.env
 

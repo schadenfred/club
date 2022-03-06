@@ -1,7 +1,7 @@
 #!/bin/bash
 
-minikube stop
-minikube delete
+#minikube stop
+#minikube delete
 
 #doctl kubernetes cluster kubeconfig save 410c65eb-8e10-440a-9540-d185e41d6d02
 #docker-compose down

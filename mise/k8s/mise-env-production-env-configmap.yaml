@@ -1,0 +1,21 @@
+apiVersion: v1
+data:
+  DATABASE_HOST: db
+  DATABASE_NAME: postgres
+  DATABASE_PASSWORD: password
+  DATABASE_PORT: "5432"
+  DATABASE_USERNAME: postgres
+  PGDATA: /var/lib/postgresql/data/pgdata
+  POSTGRES_DB: db
+  POSTGRES_HOST: db
+  POSTGRES_NAME: postgres
+  POSTGRES_PASSWORD: password
+  POSTGRES_USERNAME: postgres
+  RAILS_ENV: production
+  SECRET_KEY_BASE: e3e12f083c22f842c1f22183bede95af2e87b5001216826360363e6b84d1334440aced4d2369c470b622c05364aa14a09e67cc7ce75dda511fc589160de50f43
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: app-mise-env-production-env
+  name: mise-env-production-env

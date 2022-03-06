@@ -45,10 +45,10 @@ spec:
                 configMapKeyRef:
                   key: DATABASE_PORT
                   name: mise-env-production-env
-            - name: DATABASE_USERNAME
+            - name: DATABASE_USER
               valueFrom:
                 configMapKeyRef:
-                  key: DATABASE_USERNAME
+                  key: DATABASE_USER
                   name: mise-env-production-env
             - name: PGDATA
               valueFrom:
@@ -60,25 +60,15 @@ spec:
                 configMapKeyRef:
                   key: POSTGRES_DB
                   name: mise-env-production-env
-            - name: POSTGRES_HOST
-              valueFrom:
-                configMapKeyRef:
-                  key: POSTGRES_HOST
-                  name: mise-env-production-env
-            - name: POSTGRES_NAME
-              valueFrom:
-                configMapKeyRef:
-                  key: POSTGRES_NAME
-                  name: mise-env-production-env
             - name: POSTGRES_PASSWORD
               valueFrom:
                 configMapKeyRef:
                   key: POSTGRES_PASSWORD
                   name: mise-env-production-env
-            - name: POSTGRES_USERNAME
+            - name: POSTGRES_USER
               valueFrom:
                 configMapKeyRef:
-                  key: POSTGRES_USERNAME
+                  key: POSTGRES_USER
                   name: mise-env-production-env
             - name: RAILS_ENV
               valueFrom:

@@ -22,6 +22,5 @@ services:
     env_file:
       - ./mise/env/production.env
 
-
 volumes:
   db_data:

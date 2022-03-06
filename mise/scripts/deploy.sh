@@ -1,14 +1,15 @@
 #!/bin/bash
 
 docker-compose down
-#docker-compose -f docker-compose.prod.yml build
+docker-compose -f docker-compose.prod.yml build
+docker push handsomefencer/club:latest
 
 minikube stop
 minikube delete
 minikube start
 
 kompose convert -f docker-compose.prod.yml -o mise/k8s
-
+cp -r mise/backup/* mise/k8s/
 kubectl create -f mise/k8s/
 kubectl get pods --watch
 
